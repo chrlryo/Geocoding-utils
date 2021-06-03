@@ -20,5 +20,5 @@ def geocode(data_to_geocode,
 
     response = requests.post('http://localhost:8088/geocode_file', json=json.dumps(request_data))
     geocoded_data = pd.json_normalize(response.json()['data'])
-    data_to_geocode['lon'], data_to_geocode['lat'] = geocoded_data['lon'], geocoded_data['lat']
+    data_to_geocode['lon'], data_to_geocode['lat'] = geocoded_data['lon'].values, geocoded_data['lat'].values
     return data_to_geocode
