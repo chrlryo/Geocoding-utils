@@ -1,7 +1,7 @@
 import json
 import requests
 
-from pandas.io.json import json_normalize
+from pandas import json_normalize
 
 from Geocoding_utils.config import *
 
